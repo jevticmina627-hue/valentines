@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <!-- OVO JE KLJUČ ZA TELEFON -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Valentine</title>
+
+  <style>
+    body {
+      background-color: #ffe6f0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    h1 {
+      color: #ff4d88;
+    }
+
+    .hearts {
+      font-size: 28px;
+      color: #ff4d88;
+      margin-bottom: 20px;
+    }
+
+    button {
+      font-size: 22px;
+      padding: 12px 30px;
+      margin: 15px;
+      border: none;
+      border-radius: 25px;
+    }
+
+    #yes {
+      background-color: #ff66b2;
+      color: white;
+    }
+
+    #no {
+      background-color: #ffd1e8;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hearts">♥ ♥ ♥</div>
+
+  <h1>Do you want to be my Valentine?</h1>
+
+  <button id="yes">Yes</button>
+  <button id="no">No</button>
+
+  <h2 id="message"></h2>
+
+  <script>
+    const yesBtn = document.getElementById("yes");
+    const noBtn = document.getElementById("no");
+
+    yesBtn.addEventListener("click", () => {
+      document.getElementById("message").innerText = "I love you";
+    });
+
+    function moveNo() {
+      const x = Math.random() * 70;
+      const y = Math.random() * 60;
+      noBtn.style.left = x + "vw";
+      noBtn.style.top = y + "vh";
+    }
+
+    noBtn.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      moveNo();
+    });
+
+    noBtn.addEventListener("mouseover", moveNo);
+  </script>
+
+</body>
+</html>
+
